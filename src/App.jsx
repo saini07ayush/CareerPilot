@@ -6,6 +6,7 @@ import Dashboard from "./components/Dashboard";
 import RoleSelector from "./components/RoleSelector";
 import InterviewScreen from "./components/InterviewScreen";
 import FeedbackScreen from "./components/FeedbackScreen";
+import CodingRound from "./components/CodingRound";
 
 export default function App() {
   const [screen, setScreen] = useState("login");
@@ -65,11 +66,10 @@ export default function App() {
 
   return (
     <>
+      {screen === "coding" && <CodingRound config={interviewConfig} onBack={() => setScreen("dashboard")} />}
       {screen === "login" && <Login onLogin={handleLogin} />}
-      {screen === "dashboard" && <Dashboard user={user} onLogout={handleLogout} onStartInterview={() => setScreen("roleSelector")} />}
-      {screen === "roleSelector" && <RoleSelector user={user} onBack={() => setScreen("dashboard")} onStart={handleStartInterview} />}
+      {screen === "dashboard" && <Dashboard user={user} onLogout={handleLogout} onStartInterview={() => setScreen("roleSelector")} onCoding={() => setScreen("coding")} />}      {screen === "roleSelector" && <RoleSelector user={user} onBack={() => setScreen("dashboard")} onStart={handleStartInterview} />}
       {screen === "interview" && <InterviewScreen config={interviewConfig} onComplete={handleInterviewComplete} onBack={() => setScreen("roleSelector")} />}
-      {screen === "feedback" && <FeedbackScreen data={interviewData} config={interviewConfig} onRestart={handleRestart} />}
-    </>
+      {screen === "feedback" && <FeedbackScreen data={interviewData} config={interviewConfig} onRestart={handleRestart} />}    </>
   );
 }

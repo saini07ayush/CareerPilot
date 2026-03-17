@@ -13,7 +13,7 @@ const tips = [
   { title: "End with confidence", body: "Always close with 'Is there anything I can elaborate on?'" },
 ];
 
-export default function Dashboard({ user, onLogout, onStartInterview }) {
+export default function Dashboard({ user, onLogout, onStartInterview, onCoding }) {
   const [history, setHistory] = useState([]);
   const [loadingHistory, setLoadingHistory] = useState(true);
   const [tipIndex, setTipIndex] = useState(0);
@@ -118,6 +118,17 @@ export default function Dashboard({ user, onLogout, onStartInterview }) {
             onMouseEnter={e => { e.currentTarget.style.background = "#f0a820"; e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 4px 30px rgba(232,160,32,0.4)"; }}
             onMouseLeave={e => { e.currentTarget.style.background = "#e8a020"; e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 0 30px rgba(232,160,32,0.2)"; }}>
             ▶ &nbsp; START INTERVIEW
+          </button>
+          <button onClick={onCoding}
+            style={{
+              background: "transparent", color: "#a78bfa", border: "1px solid rgba(167,139,250,.4)",
+              fontFamily: orbitron, fontWeight: 700, fontSize: 13, letterSpacing: "0.15em",
+              padding: "20px 32px", cursor: "pointer", transition: "all 0.2s",
+              whiteSpace: "nowrap",
+            }}
+            onMouseEnter={e => { e.currentTarget.style.background = "rgba(167,139,250,0.1)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
+            onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.transform = "translateY(0)"; }}>
+            ⌨ &nbsp; CODING ROUND
           </button>
         </div>
 

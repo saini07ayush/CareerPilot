@@ -209,19 +209,19 @@ export default function Login({ onLogin }) {
             </button>
             <div style={{ display: "flex", alignItems: "center", gap: 12, margin: "20px 0" }}>
               <div style={{ flex: 1, height: 1, background: "#1c1c1c" }} />
-              <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: 14, color: "#2a2a2a", letterSpacing: "0.15em" }}>or authenticate via</span>
+              <span style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: 14, color: "#b1b1b1", letterSpacing: "0.15em" }}>or authenticate via</span>
               <div style={{ flex: 1, height: 1, background: "#1c1c1c" }} />
             </div>
 
             <button onClick={handleGoogle} disabled={loading}
               style={{
                 width: "100%", display: "flex", alignItems: "center", justifyContent: "center", gap: 10,
-                background: "transparent", border: "1px solid #1c1c1c", color: "#4a4440",
-                fontFamily: "'Share Tech Mono', monospace", fontSize: 11, letterSpacing: "0.1em",
+                background: "transparent", border: "1px solid #1c1c1c", color: "#bebebe",
+                fontFamily: "'Share Tech Mono', monospace", fontSize: 14, letterSpacing: "0.1em",
                 padding: 13, cursor: "pointer", transition: "all 0.2s",
               }}
               onMouseEnter={e => { e.currentTarget.style.borderColor = "#2a2a2a"; e.currentTarget.style.color = "#c8c0a8"; e.currentTarget.style.background = "#0e0e0e"; }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor = "#1c1c1c"; e.currentTarget.style.color = "#4a4440"; e.currentTarget.style.background = "transparent"; }}>
+              onMouseLeave={e => { e.currentTarget.style.borderColor = "#2a2a2a"; e.currentTarget.style.color = "#c8c0a8"; e.currentTarget.style.background = "#0e0e0e"; }}>
               <GoogleIcon /> GOOGLE
             </button>
 
